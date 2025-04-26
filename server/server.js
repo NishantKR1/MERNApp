@@ -35,17 +35,17 @@ app.post('/api/users', async (req, res) => {
 
 // Example Route to fetch data from an external API
 app.get('/api/external', async (req, res) => {
-    try {
-      // Make the API request
-      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-      // Send the data to the frontend
-      res.json(response.data);
-    } catch (error) {
-      console.error('Error fetching external data:', error);
-      res.status(500).send('Failed to fetch external data');
-    }
-  });
-  
+  try {
+    // Make the API request
+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    // Send the data to the frontend
+    res.json(response.data);
+  } catch (error) {
+    console.error('Error fetching external data:', error);
+    res.status(500).send('Failed to fetch external data');
+  }
+});
+
 
 // Start server
 const PORT = process.env.PORT || 5000;
