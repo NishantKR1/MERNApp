@@ -19,9 +19,9 @@ function PostsPage() {
         alert('Api error');
         console.error('Error fetching data:', error);
         setLoading(false);
-    });
+      });
   }, []);
-  
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -43,9 +43,9 @@ function PostsPage() {
             <p className="card-description">{product.description}</p>
             <p className="card-price">Price: ${product.price}</p>
             <div className="rating">
-                {"★".repeat(Math.round(product.rating))} {/* Rating stars */}
-              </div>
-              <a href="#" className="btn-buy">Buy Now</a>
+              {"★".repeat(Math.round(product.rating))} {/* Rating stars */}
+            </div>
+            <a href="#" className="btn-buy">Buy Now</a>
           </div>
         ))}
       </div>
